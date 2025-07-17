@@ -1,6 +1,6 @@
 # Virtual Environment
 .venv/
-
+.cursor
 # Python cache
 __pycache__/
 *.pyc

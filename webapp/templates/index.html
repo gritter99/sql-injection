@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicação Vulnerável - SQL Injection Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .warning {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border: 1px solid #ffeaa7;
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu li {
+            margin: 10px 0;
+        }
+
+        .menu a {
+            display: block;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .menu a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🛡️ Aplicação Vulnerável - SQL Injection Demo</h1>
+
+        <div class="warning">
+            <strong>⚠️ ATENÇÃO:</strong> Esta aplicação foi desenvolvida para fins educacionais e contém
+            vulnerabilidades intencionais de SQL Injection. NÃO use em produção!
+        </div>
+
+        <h2>Funcionalidades Disponíveis:</h2>
+        <ul class="menu">
+            <li><a href="/login">🔐 Login (Vulnerável)</a></li>
+            <li><a href="/search">🔍 Busca de Produtos (Vulnerável)</a></li>
+        </ul>
+
+        <h2>Sobre o Projeto:</h2>
+        <p>Esta aplicação faz parte do Trabalho Prático 02 da disciplina de Tópicos Avançados em Segurança
+            Computacional.</p>
+
+        <p><strong>Objetivos:</strong></p>
+        <ul>
+            <li>Demonstrar vulnerabilidades de SQL Injection</li>
+            <li>Implementar ferramentas de detecção e mitigação</li>
+            <li>Simular ataques em ambiente controlado</li>
+        </ul>
+
+        <h2>Dados de Teste:</h2>
+        <p><strong>Usuários disponíveis:</strong></p>
+        <ul>
+            <li>admin / admin123 (administrador)</li>
+            <li>user1 / password123 (usuário comum)</li>
+            <li>testuser / test123 (usuário de teste)</li>
+        </ul>
+    </div>
+</body>
+
+</html>

